@@ -62,11 +62,11 @@ class InteractiveRecord
     
     attribute.each do |property, value|
       
-      column = property.to_s
+      @column = property.to_s
       # binding.pry 
      
     DB[:conn].execute("SELECT * FROM #{table_name} 
-    WHERE column == #{value}")
+    WHERE @column == #{value}")
      
     end
   
