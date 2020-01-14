@@ -62,7 +62,7 @@ class InteractiveRecord
     
     attribute.each do |property, value|
       # binding.pry
-    DB[:conn].execute("SELECT * FROM #{self.table_name} 
+    DB[:conn].execute("SELECT * FROM #{table_name} 
     WHERE #{property} = #{value}")
     end
   
