@@ -53,13 +53,8 @@ class InteractiveRecord
   end
   
   def self.find_by_name(name) 
-    sql = <<-SQL
-    SELECT * FROM #{table_name_for_insert} 
-    WHERE name = name;
-    SQL
-    
-    DB[:conn].execute(sql)
-  
+    DB[:conn].execute(SELECT * FROM #{self.table_name} 
+    WHERE name = ?, [name])
   end
   
 end
