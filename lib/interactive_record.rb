@@ -66,7 +66,7 @@ class InteractiveRecord
       # binding.pry 
      
     DB[:conn].execute("SELECT * FROM #{table_name} 
-    WHERE #{column} == #{value}")
+    WHERE column == #{value}")
      
     end
   
