@@ -61,7 +61,7 @@ class InteractiveRecord
   def self.find_by(attribute)
     
     attribute.each do |property, value|
-      binding.pry
+      # binding.pry
     DB[:conn].execute("SELECT * FROM #{self.table_name} 
     WHERE #{property}.to_s = #{value}")
     end
