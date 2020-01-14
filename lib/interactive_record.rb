@@ -58,8 +58,10 @@ class InteractiveRecord
   end
   
   def self.find_by(attribute)
+    
+    attribute.each do |property, value|
     DB[:conn].execute("SELECT * FROM #{self.table_name} 
-    WHERE ")
+    WHERE property = value ")
   
   end 
   
